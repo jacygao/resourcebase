@@ -27,7 +27,7 @@ func (r *resourceBase) Take() {
 	case <-r.pool:
 		return
 	default:
-		log.Printf("[WARNING] %s TakeLease blocked", r.resourceName)
+		log.Printf("[WARNING] %s Take blocked", r.resourceName)
 		<-r.pool
 	}
 }
